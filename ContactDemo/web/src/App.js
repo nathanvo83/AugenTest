@@ -18,6 +18,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalRecords, setTotalRecords] = useState(0);
 
+  // declare context global
   const context = {
     data,
     setData,
@@ -38,9 +39,9 @@ function App() {
     console.log("loading...")
 
     // did mount
+    // get data and set init data
     axios.get(API_URL).then(res => {
       setData(res.data)
-      setQuery("")
       setTotalRecords(res.data.length)
       setResultList(res.data)
     })
@@ -56,9 +57,17 @@ function App() {
 
   return (
     <AppContext.Provider value={context}>
-      <Search />
+      <table className="table-header">
+        <tbody>
+          <tr>
+            <td><Search /></td>
+            <td className="rigth-align"><Pagination /></td>
+          </tr>
+        </tbody>
+      </table>
+      
       <Results />
-      <Pagination />
+      
     </AppContext.Provider>
   );
 }

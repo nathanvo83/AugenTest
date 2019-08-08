@@ -11,22 +11,22 @@ function Results() {
   );
 
   return (
-    <table>
+    <table className="table-result">
       <thead>
         <tr>
-          <th>First</th>
-          <th>Last</th>
-          <th>Email</th>
-          <th>Phone1</th>
+          <th className="th-result left-align">First</th>
+          <th className="th-result left-align">Last</th>
+          <th className="th-result left-align">Email</th>
+          <th className="th-result rigth-align">Phone1</th>
         </tr>
       </thead>
       <tbody>
         {display.map(c => (
           <tr key={c.phone1}>
-            <td>{c.firstName}</td>
-            <td>{c.lastName}</td>
-            <td>{c.email}</td>
-            <td>{c.phone1}</td>
+            <td className="td-result">{c.firstName}</td>
+            <td className="td-result">{c.lastName}</td>
+            <td className="td-result">{c.email}</td>
+            <td className="td-result rigth-align">{c.phone1}</td>
           </tr>
         ))}
       </tbody>

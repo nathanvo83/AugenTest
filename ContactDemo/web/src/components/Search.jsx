@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import AppContext from "./AppContext";
 
+// if query string empty => return all data
+// change to lower case and filter
 const filterData = (q, data) => {
   if (q === "") {
     return data;
@@ -17,6 +19,8 @@ const filterData = (q, data) => {
   );
 };
 
+// search from data => set resultList is search result
+// init current page again
 const doSearch = (q, context) => {
   const { data, setResultList, setCurrentPage } = context;
   const results = filterData(q, data);
@@ -27,6 +31,7 @@ const doSearch = (q, context) => {
 function Search() {
   const context = useContext(AppContext);
 
+  // handler for textbox search
   const changeHandler = event => {
     const q = event.target.value;
     context.setQuery(q);

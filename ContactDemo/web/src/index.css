@@ -13,17 +13,30 @@ code {
     monospace;
 }
 
-table {
+.table-result {
   border-collapse: collapse;
   /* padding: 0% 25%; */
-  margin: 5px 0px;
+  margin: 0px;
   width: 80%;
 }
 
-table,
-th,
-td {
+.table-result,
+.th-result,
+.td-result {
   border: 1px solid black;
+}
+
+.table-header {
+  margin: 0px;
+  width: 80%;
+}
+
+.rigth-align {
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
 }
 
 .pagination-info {
@@ -31,10 +44,29 @@ td {
 }
 
 .pagination-button {
-  margin: 0px 5px;
+  /* margin: 0px 5px;
   padding: 3px 24px;
-  font-size: 12px;
+  font-size: 12px; */
+
+  /* background-color: #4caf50; */
+  /* Green */
+  border: none;
+  /* color: white; */
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  /* cursor: pointer; */
 }
+
+.pagination-button .disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .search-textbox {
-  padding: 5px 0px;
+  font-size: 16px;
+  padding: 8px 0px;
 }
