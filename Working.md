@@ -49,7 +49,12 @@ __Cons:__
 $> git clone https://github.com/nathanvo83/AugenTest.git
 $> cd ContactDemo\api
 $> dotnet run --project ./api/api.csproj
+
+Open in browser and add a certificate:
+https://localhost:44351/
+
 $> cd ContactDemo\web
+$> npm install
 $> npm start
 ```
 
