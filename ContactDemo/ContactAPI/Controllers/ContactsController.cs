@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ContactAPI.Models;
 using ContactAPI.Services.Implements;
 using ContactAPI.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace ContactAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowAll")]
     public class ContactsController : ControllerBase
     {
         private readonly IDataService dataService;

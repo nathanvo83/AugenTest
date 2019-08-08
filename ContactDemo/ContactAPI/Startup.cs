@@ -33,6 +33,19 @@ namespace ContactAPI
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Allow connect origin
+            services.AddCors(
+                o => o.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    }
+                )
+            );
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
