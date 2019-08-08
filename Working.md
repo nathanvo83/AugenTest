@@ -7,7 +7,7 @@
 
 # Assumptions
 - Data doesn't need update immediately. 
-- You can use phone1 as the primary key.
+- Can use phone1 as the primary key.
 
 
 
