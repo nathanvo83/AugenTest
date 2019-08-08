@@ -3,8 +3,11 @@
 - Data isn't big (500 record -> 80Kb, 10k records -> 1.5M) -> can download all data to client
 - Data doesn't change often (update contacts, create new contacts)
 
+
+
 # Assumptions
 - Data doesn't need update immediately. 
+
 
 
 # Design:
@@ -38,6 +41,8 @@ __Cons:__
 ## Decision:
 - Choose option 2.
 
+
+
 # Enhancements:
 - If I have more time, I will implement progressive pagination, use __Redux__
 
@@ -65,11 +70,11 @@ $> npm start
 __Timeline: 10:00__
 
 - Prepare: 1:00
-	Read document: 0:30
-	Analysis and design: 0:30
+	- Read document: 0:30
+	- Analysis and design: 0:30
 - Coding: 6:30
-	Back end: 2:0
-	Front end: 4:30
+	- Back end: 2:0
+	- Front end: 4:30
 - Style: 1:00
 - Building: 0:30
 - Document: 1:00
