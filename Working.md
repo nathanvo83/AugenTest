@@ -2,11 +2,12 @@
 # Ideas about data:
 - Data isn't big (500 record -> 80Kb, 10k records -> 1.5M) -> can download all data to client
 - Data doesn't change often (update contacts, create new contacts)
-
+- There isn't primary key in the data.
 
 
 # Assumptions
 - Data doesn't need update immediately. 
+- You can use phone1 as the primary key.
 
 
 
