@@ -12,28 +12,28 @@
 Client sends search request to server for every query string, and the server will search and return the data for 1 page
 
 __Pros:__
-+ live data (updated immediately)
-+ small response data (payload)
++ Live data (updated immediately)
++ Small response data (payload)
 
 __Cons:__
-- slow 
-- duplicate search (user search the same query again)
-- pagination -> slow
-- sorting -> slow
+- Slow 
+- Duplicate search (user search the same query again)
+- Pagination -> slow
+- Sorting -> slow
 
 
 ## Option 2: Processing on client side
 Download the entire contacts list to client side when at starting then works offline.
 
 __Pros:__
-+ search locally -> fast
-+ sorting, navigating -> fast
-+ scale better (offline)
++ Search locally -> fast
++ Sorting, navigating -> fast
++ Scale better (offline)
 
 __Cons:__
-- slow starting (has to load the entire data)
-- data could be out of date
-- use more memory on client side
+- Slow starting (has to load the entire data)
+- Data could be out of date
+- Use more memory on client side
 
 ## Decision:
 - Choose option 2.
