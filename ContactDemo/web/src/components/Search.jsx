@@ -41,7 +41,6 @@ function Search() {
         onChange={changeHandler}
         placeholder="Search.."
       />
-      <br />
     </div>
   );
 }

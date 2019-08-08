@@ -8,7 +8,7 @@ import axios from "axios";
 
 
 function App() {
-  const size = 10;
+  const size = 20;
   const API_URL = "https://localhost:44351/api/contacts";
 
   const [data, setData] = useState([]);
