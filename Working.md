@@ -1,34 +1,71 @@
-Assumption
 
-Option1: Server (process, search,…)
+# Ideas about data:
+- Data isn't big (500 record -> 80Kb, 10k records -> 1.5M) -> can download all data to client
+- Data doesn't change often (update contacts, create new contacts)
 
-+ data updated (immediately)
-+ speed load (medium) -> n times
-+ refresh
-
-- search immediately -> slow
-- duplicate search (user delete letter) -> server’s performance -> slow
-- paging -> slow
-- sort -> slow
+# Assumptions
+- Data doesn't need update immediately. 
 
 
-Option 2: Client (process, search,…)
-+ search immediately -> fast
-+ paging -> fast
-+ sort -> fast
-+ scale
+# Design:
+## Option 1: Processing on server side:
+Client sends search request to server for every query string, and the server will search and return the data for 1 page
 
-- load slow (1st time)
-- data (no updated)
-- use more memory
-- …
+__Pros:__
++ live data (updated immediately)
++ small response data (payload)
+
+__Cons:__
+- slow 
+- duplicate search (user search the same query again)
+- pagination -> slow
+- sorting -> slow
 
 
-My view:
-•	Data isn’t big (500 record -> 80Kb, 10k records -> 1.5M)
-•	Data doesn’t change more (update, create -> less)
-•	Data doesn’t need update immediately.
+## Option 2: Processing on client side
+Download the entire contacts list to client side when at starting then works offline.
 
-Decision:
-•	Choose option 2.
-•	If I have more time, I will upgrade load progressive data.
+__Pros:__
++ search locally -> fast
++ sorting, navigating -> fast
++ scale better (offline)
+
+__Cons:__
+- slow starting (has to load the entire data)
+- data could be out of date
+- use more memory on client side
+
+## Decision:
+- Choose option 2.
+
+# Enhancements:
+- If I have more time, I will implement progressive pagination, use __Redux__
+
+
+
+# Deployment
+
+```
+$> git clone https://github.com/nathanvo83/AugenTest.git
+$> cd ContactDemo\api
+$> dotnet run --project ./api/api.csproj
+$> cd ContactDemo\web
+$> npm start
+```
+
+
+
+# Timeline summary
+
+__Timeline: 10:00__
+
+- Prepare: 1:00
+	Read document: 0:30
+	Analysis and design: 0:30
+- Coding: 6:30
+	Back end: 2:0
+	Front end: 4:30
+- Style: 1:00
+- Building: 0:30
+- Document: 1:00
+
