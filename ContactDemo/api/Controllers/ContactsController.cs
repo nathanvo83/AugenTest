@@ -18,9 +18,9 @@ namespace ContactAPI.Controllers
     {
         private readonly IDataService dataService;
 
-        public ContactsController()
+        public ContactsController(IDataService dataService)
         {
-            dataService = new DataService();
+            this.dataService = dataService;
         }
 
 
@@ -29,7 +29,17 @@ namespace ContactAPI.Controllers
         public async Task<ActionResult<IEnumerable<Contact>>> GetContacts()
         {
             List<Contact> contacts = await dataService.GetDataFromCSV("SampleData.csv");
-            return contacts;
+
+            // get 4 fields FirstName, LastName, Email, Phone1
+            List<Contact> temp = contacts.Select(c => new Contact() {
+                FirstName=c.FirstName,
+                LastName=c.LastName,
+                Email=c.Email,
+                Phone1=c.Phone1
+            }).ToList();
+            
+
+            return temp;
         }
     }
 }

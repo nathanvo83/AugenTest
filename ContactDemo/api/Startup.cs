@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ContactAPI.Services.Interfaces;
+using ContactAPI.Services.Implements;
 
 namespace ContactAPI
 {
@@ -45,6 +47,10 @@ namespace ContactAPI
                     }
                 )
             );
+
+            // declare dependence injection
+            services.AddScoped<IDataService, DataService>();
+
 
         }
 
