@@ -67,7 +67,6 @@ function App() {
       </table>
       
       <Results />
-      
     </AppContext.Provider>
   );
 }
